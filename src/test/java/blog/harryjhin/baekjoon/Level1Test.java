@@ -1,6 +1,5 @@
-package blog.harryjhin.baekjoon.class1;
+package blog.harryjhin.baekjoon;
 
-import blog.harryjhin.baekjoon.SystemUtil;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
@@ -201,5 +200,67 @@ public class Level1Test {
         assertEquals(3776, actual2);
         assertEquals(1416, actual3);
         assertEquals(181720, actual4);
+    }
+
+    /**
+     * <a href="https://www.acmicpc.net/problem/2525">오븐 시계</a>
+     * <a href="https://www.acmicpc.net/source/83736654">제출</a>
+     */
+    @Test
+    @Timeout(1)
+    @DisplayName("오븐 시계")
+    public void problems2525() {
+        SystemUtil.setIn("14 30\n20");
+        final java.util.Scanner scanner = new java.util.Scanner(System.in);
+
+        int h = scanner.nextInt();
+        int m = scanner.nextInt();
+        final int t = scanner.nextInt();
+
+        m += t;
+        if (m >= 60) {
+            h += m / 60;
+            m %= 60;
+        }
+        if (h >= 24) {
+            h %= 24;
+        }
+
+        final String actual = h + " " + m;
+
+        System.out.println(actual);
+
+        assertEquals("14 50", actual);
+    }
+
+    /**
+     * <a href="https://www.acmicpc.net/problem/2480">주사위 세개</a>
+     * <a href="https://www.acmicpc.net/source/83736900">제출</a>
+     */
+    @Test
+    @Timeout(1)
+    @DisplayName("주사위 세개")
+    public void problems2480() {
+        SystemUtil.setIn("3 3 6");
+        final java.util.Scanner scanner = new java.util.Scanner(System.in);
+
+        final int a = scanner.nextInt();
+        final int b = scanner.nextInt();
+        final int c = scanner.nextInt();
+
+        final int actual;
+        if (a == b && b == c) {
+            actual = 10000 + a * 1000;
+        } else if (a == b || a == c) {
+            actual = 1000 + a * 100;
+        } else if (b == c) {
+            actual = 1000 + b * 100;
+        } else {
+            actual = Math.max(Math.max(a, b), c) * 100;
+        }
+
+        System.out.println(actual);
+
+        assertEquals(1300, actual);
     }
 }
