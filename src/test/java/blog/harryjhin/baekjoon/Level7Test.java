@@ -1,7 +1,7 @@
 package blog.harryjhin.baekjoon;
 
 /**
- * 실버 Ⅲ
+ * 실버 Ⅳ
  */
-public class Level8Test {
+public class Level7Test {
 }

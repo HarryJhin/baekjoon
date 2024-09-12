@@ -6,6 +6,9 @@ import org.junit.jupiter.api.Timeout;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * 브론즈 Ⅴ
+ */
 public class Level1Test {
 
     /**
@@ -262,5 +265,29 @@ public class Level1Test {
         System.out.println(actual);
 
         assertEquals(1300, actual);
+    }
+
+    /**
+     * <a href="https://www.acmicpc.net/problem/2475">검증수</a>
+     * <a href="https://www.acmicpc.net/source/83802849">제출</a>
+     */
+    @Test
+    @DisplayName("검증수")
+    public void problems2475() throws java.io.IOException {
+        SystemUtil.setIn("0 4 2 5 6");
+        final java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+
+        final java.util.StringTokenizer st = new java.util.StringTokenizer(reader.readLine());
+
+        int sum = 0;
+        int n;
+        while (st.hasMoreTokens()) {
+            n = Integer.parseInt(st.nextToken());
+            sum += n * n;
+        }
+
+        final int actual = sum % 10;
+
+        System.out.println(actual);
     }
 }

@@ -4,6 +4,9 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
 
+/**
+ * 브론즈 Ⅲ
+ */
 public class Level3Test {
 
     /**
@@ -290,6 +293,77 @@ public class Level3Test {
             final int b = Integer.parseInt(st.nextToken());
 
             sb.append(a + b).append("\n");
+        }
+
+        final String actual = sb.toString();
+
+        System.out.println(actual);
+    }
+
+    /**
+     * <a href="https://www.acmicpc.net/problem/2720">세탁소 사장 동혁</a>
+     * <a href="https://www.acmicpc.net/source/83772102">제출</a>
+     */
+    @Test
+    @DisplayName("세탁소 사장 동혁")
+    public void problems2720() throws java.io.IOException {
+        SystemUtil.setIn("3\n124\n25\n194");
+        final java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+
+        final int[] coins = {25, 10, 5, 1};
+        final int t = Integer.parseInt(reader.readLine());
+
+        final StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < t; i++) {
+            int c = Integer.parseInt(reader.readLine());
+            for (int coin : coins) {
+                sb.append(c / coin).append(" ");
+                c %= coin;
+            }
+            sb.append("\n");
+        }
+
+        System.out.println(sb);
+    }
+
+    /**
+     * <a href="https://www.acmicpc.net/problem/2903">중앙 이동 알고리즘</a>
+     * <a href="https://www.acmicpc.net/source/83772617">제출</a>
+     */
+    @Test
+    @DisplayName("중앙 이동 알고리즘")
+    public void problems2903() throws java.io.IOException {
+        SystemUtil.setIn("1");
+        final java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+
+        final int n = Integer.parseInt(reader.readLine());
+        final int dots = (int) Math.pow(2, n) + 1;
+
+        System.out.println(dots * dots);
+    }
+
+    /**
+     * <a href="https://www.acmicpc.net/problem/2675">문자열 반복</a>
+     * <a href="https://www.acmicpc.net/source/83803432">제출</a>
+     */
+    @Test
+    @DisplayName("문자열 반복")
+    public void problems2675() throws java.io.IOException {
+        SystemUtil.setIn("2\n3 ABC\n5 /HTP");
+        final java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+
+        final int t = Integer.parseInt(reader.readLine());
+
+        final StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < t; i++) {
+            final java.util.StringTokenizer rs = new java.util.StringTokenizer(reader.readLine());
+            final int r = Integer.parseInt(rs.nextToken());
+            final String s = rs.nextToken();
+
+            for (int j = 0; j < s.length(); j++) {
+                sb.append(String.valueOf(s.charAt(j)).repeat(r));
+            }
+            sb.append("\n");
         }
 
         final String actual = sb.toString();

@@ -4,6 +4,9 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
 
+/**
+ * 브론즈 Ⅱ
+ */
 public class Level4Test {
 
     /**
@@ -303,5 +306,102 @@ public class Level4Test {
 
         final double average = (sum / max * 100) / n;
         System.out.println(average);
+    }
+
+
+    /**
+     * <a href="https://www.acmicpc.net/problem/2745">진법 변환</a>
+     * <a href="https://www.acmicpc.net/source/83768551">제출</a>
+     */
+    @Test
+    @DisplayName("진법 변환")
+    public void problems2745() throws java.io.IOException {
+        SystemUtil.setIn("ZZZZZ 36");
+        final java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+
+        final java.util.StringTokenizer nb = new java.util.StringTokenizer(reader.readLine());
+        final String n = nb.nextToken();
+        final int b = Integer.parseInt(nb.nextToken());
+
+        System.out.println(Integer.parseInt(n, b));
+    }
+
+    /**
+     * <a href="https://www.acmicpc.net/problem/2292">벌집</a>
+     * <a href="https://www.acmicpc.net/source/83773458">제출</a>
+     */
+    @Test
+    @DisplayName("벌집")
+    public void problems2292() throws java.io.IOException {
+        SystemUtil.setIn("13");
+        final java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+
+        final int n = Integer.parseInt(reader.readLine());
+        int floor = 1;
+        int total = 1;
+
+        while (total < n) {
+            total += 6 * floor;
+            floor++;
+        }
+
+        System.out.println(floor);
+    }
+
+    /**
+     * <a href="https://www.acmicpc.net/problem/10809">알파벳 찾기</a>
+     * <a href="https://www.acmicpc.net/source/83804740">제출</a>
+     */
+    @Test
+    @DisplayName("알파벳 찾기")
+    public void problems10809() throws java.io.IOException {
+        SystemUtil.setIn("baekjoon");
+        final java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+
+        final String s = reader.readLine();
+        final int[] alphabets = new int[26];
+        java.util.Arrays.fill(alphabets, -1);
+
+        for (int i = 0; i < s.length(); i++) {
+            final int index = s.charAt(i) - 'a';
+            if (alphabets[index] == -1) {
+                alphabets[index] = i;
+            }
+        }
+
+        final StringBuilder sb = new StringBuilder();
+        for (int alphabet : alphabets) {
+            sb.append(alphabet).append(" ");
+        }
+
+        System.out.println(sb);
+    }
+
+    /**
+     * <a href="https://www.acmicpc.net/problem/2577">숫자의 개수</a>
+     * <a href="https://www.acmicpc.net/source/83805220">제출</a>
+     */
+    @Test
+    @DisplayName("숫자의 개수")
+    public void problems2577() throws java.io.IOException {
+        SystemUtil.setIn("150\n266\n427");
+        final java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+
+        final int a = Integer.parseInt(reader.readLine());
+        final int b = Integer.parseInt(reader.readLine());
+        final int c = Integer.parseInt(reader.readLine());
+        final int[] counts = new int[10];
+
+        final int result = a * b * c;
+        for (char ch : String.valueOf(result).toCharArray()) {
+            counts[ch - '0']++;
+        }
+
+        final StringBuilder sb = new StringBuilder();
+        for (int count : counts) {
+            sb.append(count).append("\n");
+        }
+
+        System.out.println(sb);
     }
 }

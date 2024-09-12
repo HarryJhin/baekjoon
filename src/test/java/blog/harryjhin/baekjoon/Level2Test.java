@@ -6,6 +6,9 @@ import org.junit.jupiter.api.Timeout;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * 브론즈 Ⅳ
+ */
 public class Level2Test {
 
     /**
@@ -118,5 +121,46 @@ public class Level2Test {
         System.out.println(actual);
 
         assertEquals("9 25", actual);
+    }
+
+    /**
+     * <a href="https://www.acmicpc.net/problem/11720">숫자의 합</a>
+     * <a href="https://www.acmicpc.net/source/83803096">제출</a>
+     */
+    @Test
+    @DisplayName("숫자의 합")
+    public void problems11720() throws java.io.IOException {
+        SystemUtil.setIn("5\n54321");
+        final java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+
+        final int n = Integer.parseInt(reader.readLine());
+        final String s = reader.readLine();
+
+        int sum = 0;
+        for (int i = 0; i < n; i++) {
+            sum += s.charAt(i) - '0';
+        }
+
+        final int actual = sum;
+
+        System.out.println(actual);
+    }
+
+    /**
+     * <a href="https://www.acmicpc.net/problem/31403">A + B - C</a>
+     * <a href="https://www.acmicpc.net/source/83804307">제출</a>
+     */
+    @Test
+    @DisplayName("A + B - C")
+    public void problems31403() throws java.io.IOException {
+        SystemUtil.setIn("3\n4\n5");
+        final java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+
+        final int a = Integer.parseInt(reader.readLine());
+        final int b = Integer.parseInt(reader.readLine());
+        final int c = Integer.parseInt(reader.readLine());
+
+        System.out.println(a + b - c);
+        System.out.println(Integer.parseInt(a + Integer.toString(b)) - c);
     }
 }
