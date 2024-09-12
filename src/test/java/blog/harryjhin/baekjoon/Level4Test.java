@@ -404,4 +404,77 @@ public class Level4Test {
 
         System.out.println(sb);
     }
+
+    /**
+     * <a href="https://www.acmicpc.net/problem/2920">음계</a>
+     * <a href="https://www.acmicpc.net/source/83812003">제출</a>
+     */
+    @Test
+    @DisplayName("음계")
+    public void problems2920() throws java.io.IOException {
+        SystemUtil.setIn("1 2 3 4 5 6 7 8");
+        final java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+
+        final java.util.StringTokenizer st = new java.util.StringTokenizer(reader.readLine());
+        final int[] scales = new int[8];
+
+        for (int i = 0; i < 8; i++) {
+            scales[i] = Integer.parseInt(st.nextToken());
+        }
+
+        boolean ascending = true;
+        boolean descending = true;
+        for (int i = 0; i < 7; i++) {
+            if (scales[i] < scales[i + 1]) {
+                descending = false;
+            } else if (scales[i] > scales[i + 1]) {
+                ascending = false;
+            }
+
+            if (!ascending && !descending) {
+                break;
+            }
+        }
+
+        if (ascending) {
+            System.out.println("ascending");
+        } else if (descending) {
+            System.out.println("descending");
+        } else {
+            System.out.println("mixed");
+        }
+    }
+
+    /**
+     * <a href="https://www.acmicpc.net/problem/8958">OX퀴즈</a>
+     * <a href="https://www.acmicpc.net/source/83812121">제출</a>
+     */
+    @Test
+    @DisplayName("OX퀴즈")
+    public void problems8958() throws java.io.IOException {
+        SystemUtil.setIn("5\nOOXXOXXOOO\nOOXXOOXXOO\nOXOXOXOXOXOXOX\nOOOOOOOOOO\nOOOOXOOOOXOOOOX");
+        final java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+
+        final int n = Integer.parseInt(reader.readLine());
+
+        final StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < n; i++) {
+            final char[] ox = reader.readLine().toCharArray();
+            int score = 0;
+            int count = 0;
+
+            for (char ch : ox) {
+                if (ch == 'O') {
+                    count++;
+                    score += count;
+                } else {
+                    count = 0;
+                }
+            }
+
+            sb.append(score).append("\n");
+        }
+
+        System.out.println(sb);
+    }
 }

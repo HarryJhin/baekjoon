@@ -290,4 +290,57 @@ public class Level1Test {
 
         System.out.println(actual);
     }
+
+    /**
+     * <a href="https://www.acmicpc.net/problem/2741">N 찍기</a>
+     * <a href="https://www.acmicpc.net/source/83806633">제출</a>
+     */
+    @Test
+    @DisplayName("N 찍기")
+    public void problems2741() throws java.io.IOException {
+        SystemUtil.setIn("5");
+        final java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+
+        final int n = Integer.parseInt(reader.readLine());
+
+        final StringBuilder sb = new StringBuilder();
+        for (int i = 1; i <= n; i++) {
+            sb.append(i).append("\n");
+        }
+
+        System.out.println(sb);
+    }
+
+    /**
+     * <a href="https://www.acmicpc.net/problem/11654">아스키 코드</a>
+     * <a href="https://www.acmicpc.net/source/83806983">제출</a>
+     */
+    @Test
+    @DisplayName("아스키 코드")
+    public void problems11654() throws java.io.IOException {
+        SystemUtil.setIn("A");
+        final java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+
+        final char c = reader.readLine().charAt(0);
+
+        System.out.println((int) c);
+    }
+
+    /**
+     * <a href="https://www.acmicpc.net/problem/27866">문자와 문자열</a>
+     * <a href="https://www.acmicpc.net/source/83807293">제출</a>
+     */
+    @Test
+    @DisplayName("문자와 문자열")
+    public void problems27866() throws java.io.IOException {
+        SystemUtil.setIn("Sprout\n3");
+        final java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+
+        final String s = reader.readLine();
+        final int i = Integer.parseInt(reader.readLine());
+
+        final char actual = s.charAt(i - 1);
+
+        System.out.println(actual);
+    }
 }

@@ -370,4 +370,32 @@ public class Level3Test {
 
         System.out.println(actual);
     }
+
+    /**
+     * <a href="https://www.acmicpc.net/problem/10250">ACM 호텔</a>
+     * <a href="https://www.acmicpc.net/source/83808726">제출</a>
+     */
+    @Test
+    @DisplayName("ACM 호텔")
+    public void problems10250() throws java.io.IOException {
+        SystemUtil.setIn("2\n6 12 10\n30 50 72");
+        final java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+
+        final int t = Integer.parseInt(reader.readLine());
+
+        final StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < t; i++) {
+            final java.util.StringTokenizer rs = new java.util.StringTokenizer(reader.readLine());
+            final int h = Integer.parseInt(rs.nextToken());
+            final int w = Integer.parseInt(rs.nextToken());
+            final int n = Integer.parseInt(rs.nextToken());
+
+            final int floor = n % h == 0 ? h : n % h;
+            final int room = n % h == 0 ? n / h : n / h + 1;
+
+            sb.append(floor).append(String.format("%02d", room)).append("\n");
+        }
+
+        System.out.println(sb);
+    }
 }
