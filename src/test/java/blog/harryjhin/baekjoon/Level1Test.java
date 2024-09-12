@@ -343,4 +343,107 @@ public class Level1Test {
 
         System.out.println(actual);
     }
+
+    /**
+     * <a href="https://www.acmicpc.net/problem/2420">사파리월드</a>
+     * <a href="https://www.acmicpc.net/source/83812392">제출</a>
+     */
+    @Test
+    @DisplayName("사파리월드")
+    public void problems2420() throws java.io.IOException {
+        SystemUtil.setIn("-2 5");
+        final java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+
+        final java.util.StringTokenizer nm = new java.util.StringTokenizer(reader.readLine());
+
+        final long n = Long.parseLong(nm.nextToken());
+        final long m = Long.parseLong(nm.nextToken());
+
+        final long actual = Math.abs(n - m);
+
+        System.out.println(actual);
+    }
+
+    /**
+     * <a href="https://www.acmicpc.net/problem/2743">단어 길이 재기</a>
+     * <a href="https://www.acmicpc.net/source/83812492">제출</a>
+     */
+    @Test
+    @DisplayName("단어 길이 재기")
+    public void problems2743() throws java.io.IOException {
+        SystemUtil.setIn("pulljima");
+        final java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+
+        final String s = reader.readLine();
+
+        final int actual = s.length();
+
+        System.out.println(actual);
+    }
+
+    /**
+     * <a href="https://www.acmicpc.net/problem/2744">대소문자 바꾸기</a>
+     * <a href="https://www.acmicpc.net/source/83813988">제출</a>
+     */
+    @Test
+    @DisplayName("대소문자 바꾸기")
+    public void problems2744() throws java.io.IOException {
+        SystemUtil.setIn("pulljima");
+        final java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+
+        final String s = reader.readLine();
+
+        final StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < s.length(); i++) {
+            final char c = s.charAt(i);
+            if (Character.isUpperCase(c)) {
+                sb.append(Character.toLowerCase(c));
+            } else {
+                sb.append(Character.toUpperCase(c));
+            }
+        }
+
+        System.out.println(sb);
+    }
+
+    /**
+     * <a href="https://www.acmicpc.net/problem/9086">문자열</a>
+     * <a href="https://www.acmicpc.net/source/83814261">제출</a>
+     */
+    @Test
+    @DisplayName("문자열")
+    public void problems9086() throws java.io.IOException {
+        SystemUtil.setIn("pulljima");
+        final java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+
+        final int t = Integer.parseInt(reader.readLine());
+
+        final StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < t; i++) {
+            final String s = reader.readLine();
+            sb.append(s.charAt(0)).append(s.charAt(s.length() - 1)).append("\n");
+        }
+
+        System.out.println(sb);
+    }
+
+    /**
+     * <a href="https://www.acmicpc.net/problem/15964">이상한 기호</a>
+     * <a href="https://www.acmicpc.net/source/83814329">제출</a>
+     */
+    @Test
+    @DisplayName("이상한 기호")
+    public void problems15964() throws java.io.IOException {
+        SystemUtil.setIn("3 2");
+        final java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+
+        final java.util.StringTokenizer ab = new java.util.StringTokenizer(reader.readLine());
+
+        final long a = Long.parseLong(ab.nextToken());
+        final long b = Long.parseLong(ab.nextToken());
+
+        final long actual = (a + b) * (a - b);
+
+        System.out.println(actual);
+    }
 }

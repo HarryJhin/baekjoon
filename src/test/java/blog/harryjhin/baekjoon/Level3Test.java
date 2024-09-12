@@ -398,4 +398,138 @@ public class Level3Test {
 
         System.out.println(sb);
     }
+
+    /**
+     * <a href="https://www.acmicpc.net/problem/10872">팩토리얼</a>
+     * <a href="https://www.acmicpc.net/source/83812718">제출</a>
+     */
+    @Test
+    @DisplayName("팩토리얼")
+    public void problems10872() throws java.io.IOException {
+        SystemUtil.setIn("10");
+        final java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+
+        final int n = Integer.parseInt(reader.readLine());
+        int factorial = 1;
+
+        for (int i = 1; i <= n; i++) {
+            factorial *= i;
+        }
+
+        System.out.println(factorial);
+    }
+
+    /**
+     * <a href="https://www.acmicpc.net/problem/2738">행렬 덧셈</a>
+     * <a href="https://www.acmicpc.net/source/83813216">제출</a>
+     */
+    @Test
+    @DisplayName("행렬 덧셈")
+    public void problems2738() throws java.io.IOException {
+        SystemUtil.setIn("3 3\n1 1 1\n2 2 2\n0 1 0\n 3 3 3\n 4 4 4\n5 5 100");
+        final java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+
+        final java.util.StringTokenizer rs = new java.util.StringTokenizer(reader.readLine());
+        final int n = Integer.parseInt(rs.nextToken());
+        final int m = Integer.parseInt(rs.nextToken());
+
+        final int[][] a = new int[n][m];
+
+        for (int i = 0; i < n; i++) {
+            final java.util.StringTokenizer st = new java.util.StringTokenizer(reader.readLine());
+            for (int j = 0; j < m; j++) {
+                a[i][j] = Integer.parseInt(st.nextToken());
+            }
+        }
+
+        final StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < n; i++) {
+            final java.util.StringTokenizer st = new java.util.StringTokenizer(reader.readLine());
+            for (int j = 0; j < m; j++) {
+                sb.append(a[i][j] + Integer.parseInt(st.nextToken())).append(" ");
+            }
+            sb.append("\n");
+        }
+
+        System.out.println(sb);
+    }
+
+    /**
+     * <a href="https://www.acmicpc.net/problem/2754">학점계산</a>
+     * <a href="https://www.acmicpc.net/source/83814115">제출</a>
+     */
+    @Test
+    @DisplayName("학점계산")
+    public void problems2754() throws java.io.IOException {
+        SystemUtil.setIn("A+");
+        final java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+
+        final String grade = reader.readLine();
+
+        String actual = "";
+        switch (grade) {
+            case "A+":
+                actual = "4.3";
+                break;
+            case "A0":
+                actual = "4.0";
+                break;
+            case "A-":
+                actual = "3.7";
+                break;
+            case "B+":
+                actual = "3.3";
+                break;
+            case "B0":
+                actual = "3.0";
+                break;
+            case "B-":
+                actual = "2.7";
+                break;
+            case "C+":
+                actual = "2.3";
+                break;
+            case "C0":
+                actual = "2.0";
+                break;
+            case "C-":
+                actual = "1.7";
+                break;
+            case "D+":
+                actual = "1.3";
+                break;
+            case "D0":
+                actual = "1.0";
+                break;
+            case "D-":
+                actual = "0.7";
+                break;
+            case "F":
+                actual = "0.0";
+                break;
+        }
+
+        System.out.println(actual);
+    }
+
+    /**
+     * <a href="https://www.acmicpc.net/problem/11718">그대로 출력하기</a>
+     * <a href="https://www.acmicpc.net/source/83814198">제출</a>
+     */
+    @Test
+    @DisplayName("그대로 출력하기")
+    public void problems11718() throws java.io.IOException {
+        SystemUtil.setIn("Hello\nBaekjoon\nOnline Judge");
+        final java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+
+        final StringBuilder sb = new StringBuilder();
+        String line;
+        while ((line = reader.readLine()) != null) {
+            sb.append(line).append("\n");
+        }
+
+        final String actual = sb.toString();
+
+        System.out.println(actual);
+    }
 }
