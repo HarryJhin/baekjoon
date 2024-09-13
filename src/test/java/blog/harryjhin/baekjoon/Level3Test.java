@@ -1,5 +1,9 @@
 package blog.harryjhin.baekjoon;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
@@ -16,9 +20,9 @@ public class Level3Test {
     @Test
     @Timeout(1)
     @DisplayName("구구단")
-    public void problems2739() throws java.io.IOException {
+    public void problems2739() throws IOException {
         SystemUtil.setIn("2");
-        final java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+        final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         final int n = Integer.parseInt(reader.readLine());
 
@@ -34,9 +38,9 @@ public class Level3Test {
     @Test
     @Timeout(1)
     @DisplayName("A+B - 3")
-    public void problems10950() throws java.io.IOException {
+    public void problems10950() throws IOException {
         SystemUtil.setIn("5\n1 1\n2 3\n3 4\n9 8\n5 2");
-        final java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+        final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         final int t = Integer.parseInt(reader.readLine());
 
@@ -56,9 +60,9 @@ public class Level3Test {
     @Test
     @Timeout(1)
     @DisplayName("합")
-    public void problems8393() throws java.io.IOException {
+    public void problems8393() throws IOException {
         SystemUtil.setIn("3");
-        final java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+        final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         final int n = Integer.parseInt(reader.readLine());
         int sum = 0;
@@ -77,9 +81,9 @@ public class Level3Test {
     @Test
     @Timeout(1)
     @DisplayName("빠른 A+B")
-    public void problems15552() throws java.io.IOException {
+    public void problems15552() throws IOException {
         SystemUtil.setIn("5\n1 1\n2 3\n3 4\n9 8\n5 2");
-        final java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+        final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         final int t = Integer.parseInt(reader.readLine());
         final StringBuilder sb = new StringBuilder();
@@ -104,9 +108,9 @@ public class Level3Test {
     @Test
     @Timeout(1)
     @DisplayName("영수증")
-    public void problems25304() throws java.io.IOException {
+    public void problems25304() throws IOException {
         SystemUtil.setIn("260000\n4\n20000 5\n30000 2\n10000 6\n5000 8");
-        final java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+        final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         final int total = Integer.parseInt(reader.readLine());
         final int n = Integer.parseInt(reader.readLine());
@@ -131,19 +135,15 @@ public class Level3Test {
     @Test
     @Timeout(value = 500, unit = java.util.concurrent.TimeUnit.MILLISECONDS)
     @DisplayName("코딩은 체육과목 입니다")
-    public void problems25314() throws java.io.IOException {
+    public void problems25314() throws IOException {
         SystemUtil.setIn("4");
-        final java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+        final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         final int n = Integer.parseInt(reader.readLine());
 
         final int count = n / 4;
 
-        final StringBuilder sb = new StringBuilder();
-        sb.append("long ".repeat(count));
-        sb.append("int");
-
-        final String actual = sb.toString();
+        final String actual = "long ".repeat(count) + "int";
 
         System.out.println(actual);
     }
@@ -155,9 +155,9 @@ public class Level3Test {
     @Test
     @Timeout(1)
     @DisplayName("A+B - 7")
-    public void problems11021() throws java.io.IOException {
+    public void problems11021() throws IOException {
         SystemUtil.setIn("5\n1 1\n2 3\n3 4\n9 8\n5 2");
-        final java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+        final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         final int t = Integer.parseInt(reader.readLine());
         final StringBuilder sb = new StringBuilder();
@@ -180,9 +180,9 @@ public class Level3Test {
     @Test
     @Timeout(1)
     @DisplayName("A+B - 8")
-    public void problems11022() throws java.io.IOException {
+    public void problems11022() throws IOException {
         SystemUtil.setIn("5\n1 1\n2 3\n3 4\n9 8\n5 2");
-        final java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+        final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         final int t = Integer.parseInt(reader.readLine());
         final StringBuilder sb = new StringBuilder();
@@ -205,9 +205,9 @@ public class Level3Test {
     @Test
     @Timeout(1)
     @DisplayName("별 찍기 - 1")
-    public void problems2438() throws java.io.IOException {
+    public void problems2438() throws IOException {
         SystemUtil.setIn("5");
-        final java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+        final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         final int n = Integer.parseInt(reader.readLine());
 
@@ -228,9 +228,9 @@ public class Level3Test {
     @Test
     @Timeout(1)
     @DisplayName("별 찍기 - 2")
-    public void problems2439() throws java.io.IOException {
+    public void problems2439() throws IOException {
         SystemUtil.setIn("5");
-        final java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+        final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         final int n = Integer.parseInt(reader.readLine());
 
@@ -251,9 +251,9 @@ public class Level3Test {
     @Test
     @Timeout(1)
     @DisplayName("A+B - 5")
-    public void problems10952() throws java.io.IOException {
+    public void problems10952() throws IOException {
         SystemUtil.setIn("1 1\n2 3\n3 4\n9 8\n5 2\n0 0");
-        final java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+        final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         final StringBuilder sb = new StringBuilder();
         while (true) {
@@ -280,9 +280,9 @@ public class Level3Test {
     @Test
     @Timeout(1)
     @DisplayName("A+B - 4")
-    public void problems10951() throws java.io.IOException {
+    public void problems10951() throws IOException {
         SystemUtil.setIn("1 1\n2 3\n3 4\n9 8\n5 2");
-        final java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+        final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         String line;
         final StringBuilder sb = new StringBuilder();
@@ -306,9 +306,9 @@ public class Level3Test {
      */
     @Test
     @DisplayName("세탁소 사장 동혁")
-    public void problems2720() throws java.io.IOException {
+    public void problems2720() throws IOException {
         SystemUtil.setIn("3\n124\n25\n194");
-        final java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+        final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         final int[] coins = {25, 10, 5, 1};
         final int t = Integer.parseInt(reader.readLine());
@@ -332,9 +332,9 @@ public class Level3Test {
      */
     @Test
     @DisplayName("중앙 이동 알고리즘")
-    public void problems2903() throws java.io.IOException {
+    public void problems2903() throws IOException {
         SystemUtil.setIn("1");
-        final java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+        final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         final int n = Integer.parseInt(reader.readLine());
         final int dots = (int) Math.pow(2, n) + 1;
@@ -348,9 +348,9 @@ public class Level3Test {
      */
     @Test
     @DisplayName("문자열 반복")
-    public void problems2675() throws java.io.IOException {
+    public void problems2675() throws IOException {
         SystemUtil.setIn("2\n3 ABC\n5 /HTP");
-        final java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+        final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         final int t = Integer.parseInt(reader.readLine());
 
@@ -377,9 +377,9 @@ public class Level3Test {
      */
     @Test
     @DisplayName("ACM 호텔")
-    public void problems10250() throws java.io.IOException {
+    public void problems10250() throws IOException {
         SystemUtil.setIn("2\n6 12 10\n30 50 72");
-        final java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+        final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         final int t = Integer.parseInt(reader.readLine());
 
@@ -405,9 +405,9 @@ public class Level3Test {
      */
     @Test
     @DisplayName("팩토리얼")
-    public void problems10872() throws java.io.IOException {
+    public void problems10872() throws IOException {
         SystemUtil.setIn("10");
-        final java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+        final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         final int n = Integer.parseInt(reader.readLine());
         int factorial = 1;
@@ -425,9 +425,9 @@ public class Level3Test {
      */
     @Test
     @DisplayName("행렬 덧셈")
-    public void problems2738() throws java.io.IOException {
+    public void problems2738() throws IOException {
         SystemUtil.setIn("3 3\n1 1 1\n2 2 2\n0 1 0\n 3 3 3\n 4 4 4\n5 5 100");
-        final java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+        final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         final java.util.StringTokenizer rs = new java.util.StringTokenizer(reader.readLine());
         final int n = Integer.parseInt(rs.nextToken());
@@ -460,9 +460,9 @@ public class Level3Test {
      */
     @Test
     @DisplayName("학점계산")
-    public void problems2754() throws java.io.IOException {
+    public void problems2754() throws IOException {
         SystemUtil.setIn("A+");
-        final java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+        final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         final String grade = reader.readLine();
 
@@ -518,9 +518,9 @@ public class Level3Test {
      */
     @Test
     @DisplayName("그대로 출력하기")
-    public void problems11718() throws java.io.IOException {
+    public void problems11718() throws IOException {
         SystemUtil.setIn("Hello\nBaekjoon\nOnline Judge");
-        final java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+        final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         final StringBuilder sb = new StringBuilder();
         String line;
