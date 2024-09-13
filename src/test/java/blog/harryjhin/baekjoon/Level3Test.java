@@ -532,4 +532,38 @@ public class Level3Test {
 
         System.out.println(actual);
     }
+
+    /**
+     * <a href="https://www.acmicpc.net/problem/4153">직각삼각형</a>
+     * <a href="https://www.acmicpc.net/source/83845237">제출</a>
+     */
+    @Test
+    @DisplayName("직각삼각형")
+    public void problems4153() throws IOException {
+        SystemUtil.setIn("6 8 10\n" +
+                "25 52 60\n" +
+                "5 12 13\n" +
+                "0 0 0");
+
+        final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+        String line;
+        final StringBuilder output = new StringBuilder();
+        while (!(line = reader.readLine()).equals("0 0 0")) {
+            final StringTokenizer ABC = new StringTokenizer(line);
+            final int A = Integer.parseInt(ABC.nextToken());
+            final int B = Integer.parseInt(ABC.nextToken());
+            final int C = Integer.parseInt(ABC.nextToken());
+
+            if ((A * A + B * B == C * C) ||
+                (A * A + C * C == B * B) ||
+                (B * B + C * C == A * A)) {
+                output.append("right\n");
+            } else {
+                output.append("wrong\n");
+            }
+        }
+
+        System.out.println(output);
+    }
 }
